@@ -47,6 +47,35 @@ python manage.py migrate
 ```
 python manage.py csv_load
 ```
+## How to Dockerfile and container?
+1. Cd into api_yamdb
+```
+cd api_yamdb
+```
+2. Build Docker image
+```
+docker build -t yamdb .  
+```
+3. Cd into /infra
+```
+cd ../infra
+```
+4. Build container
+```
+docker-compose up
+```
+5. Make migrations
+```
+docker-compose exec web python manage.py migrate
+```
+6. Make superuser
+```
+docker-compose exec web python manage.py createsuperuser
+```
+7. Make static
+```
+docker-compose exec web python manage.py collectstatic --no-input
+```
 ## How to Run YaMDb API?
 ```
 python manage.py runserver
