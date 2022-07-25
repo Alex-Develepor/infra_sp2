@@ -1,3 +1,4 @@
+
 <h1 align='center'>
   <br>
   <a href='https://github.com/pyccy/'><img src='https://i.imgur.com/NfWkZje.jpg' width=500 weigth=500 alt='YaMDb'></a>
@@ -47,6 +48,17 @@ python manage.py migrate
 ```
 python manage.py csv_load
 ```
+## .env
+create .env file and fill it 
+```
+DB_ENGINE=django.db.backends.postgresql
+DB_NAME=postgres
+POSTGRES_USER=yourloggin
+POSTGRES_PASSWORD=yourpassword
+DB_HOST=db
+DB_PORT=5432
+SECRET_KEY=yoursecretkey
+```
 ## How to Dockerfile and container?
 1. Cd into api_yamdb
 ```
@@ -76,6 +88,10 @@ docker-compose exec web python manage.py createsuperuser
 ```
 docker-compose exec web python manage.py collectstatic --no-input
 ```
+8. Make fixture
+```
+docker-compose exec web python manage.py dumpdata > fixtures.json
+```
 ## How to Run YaMDb API?
 ```
 python manage.py runserver
@@ -99,6 +115,4 @@ Navigate to the site in your local rest client: http://127.0.0.1:8000
 ## Contributors
 For anyone who is interested in contributing to YaMDb REST API, please make sure you fork the project and make a pull request.
 
-## Made in collaboration with:
-* [https://github.com/dashapitasha](https://github.com/Alex-Develepor)
-* [https://github.com/Alex-Develepor](https://github.com/Alex-Develepor)
+
